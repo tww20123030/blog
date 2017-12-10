@@ -50,7 +50,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,97 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-如何写好IT类论文" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/10/如何写好IT类论文/" class="article-date">
+  <time datetime="2017-12-10T14:45:49.000Z" itemprop="datePublished">2017-12-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/10/如何写好IT类论文/">如何写好IT类论文</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##综述<br>写好一篇IT类 paper，个人觉得要注意一下几点：<br>1.内容方面: 解决的问题要明确，可以是解决某个具体场景的具体问题。有一点很重要很重要。<strong>宁可系统只有一个亮点,也不要有明显的缺点</strong>。比如介绍技术背景的时候要调查清楚技术确实是这样用的，你的表述无问题。你的设计和实现千万不要有漏洞，要确实是你实现了的。不清楚的就不要说，说出的每一句话都要保证是对的。</p>
+<p>2.结构方面: 你要站在读者的角度思考，怎么引导读者思考，让读者明白。<br>section之间有联系，前后照应，前面提到的后面要体现。<br>段之间，句子之间有联系，不要东一句西一句。比如因为所以的联系，对比的关系。关系一定要对应，不要写的是因为和所以，但其实不是因果关系。你的目的是要表述清楚，你讲的每一句话都要有目的，不要想到什么说什么。要简明扼要，直接讲出来，不要埋伏笔什么的。同时杜绝废话。个人经验是整篇paper都是围绕你的contribution展开，contribution提出来后 在之后的章节都要重点突出出来。比如你的contribution是实现了什么目标，那么在background里介绍使用到的技术细节，在design和 implement里的阐述都是为了实现你的目标，再用evaluation验证，在related work里 通过与其他work对比突出你的贡献，最后在conclusion再次提出你的contribution。此外，全文通过和其他系统对比来展开是很好的手段。比如通过对比现有方案，引出他们的不足，自然提出你的系统并总结你的contribution。再在overview里面通过对比已有方案，提出你的方案以及你要达到的目的。之后讲如何设计实现来达到这些目的，在evaluation里面利用具体数据再次与其他系统对比来印证你确实实现了目标。然后related work里通过对比其他work突出你的优势。最后conclusion里重申你的contribution。各个章节之间有联系，但是各个章节的细节只是在各个部分内部展开，不要讲design的时候你又在讲background.。那我觉得这样的结构就很好。</p>
+<p>3.语言方面: 如果是英文paper,首选要符合英文的表述习惯，不要用中文的表述方式。保证语法正确,用词要严谨精炼简洁，语言不一定要华丽。如果你要去用一些看似少见的华丽的词，请注意词典里的用法和意义未必符合你的文章上下文，甚至不能用于paper这种严谨的作品。可以用google 学术等工具搜索一下别的paper里有无使用。还有一点就是一些词语不要换来换去，全篇保持一致，容易混淆的词语，要解释或者在paper里用不同的词代替。</p>
+<p>4.图片，表格：这些也很重要，尤其是讲设计的时候，通常要有系统的架构图，或工作流程图。好的图片配色要好，配色和文字都要让别人能看清楚，但是颜色又不要太多太杂。这方面就可以多和他人讨论一下。</p>
+<p>5.最后一点: 你可以参考其他paper的写法，比如通过对比展开的写法，这个我也是借鉴他人的。但不能直接用他们的句子，稍微改动一下单词，调整顺序什么的也不行。这是避免抄袭，同时也是因为你要强迫自己去思考，梳理自己的逻辑，别人的话这么说是因为在一定的上下文环境中，未必适合你的场景。如果你用别人的句子，那你就会想着怎么写才能把这个句子套进去，这就没有你自己的逻辑了。</p>
+<p>本文举一个例子来讲述如何写IT类paper，该例子介绍的是一个保证hypervisor安全同时overhead也不高的系统。</p>
+<p><strong>Paper各部分写法</strong><br><strong>Introduction</strong><br>    这部分包含问题及其重要性，现有方案优缺点，介绍你的方案以及contribution。<br>    1.首先开门见山引出你要介绍的问题，以及阐述问题的重要性。hypervisor存在安全问题，如果hypervisor被攻击，那么虚拟机安全得不到保障。如果你的会议是一个比较有针对性的会，你要解决的问题最好要和这个会议关注的领域相关。比如会议关注云安全，那么你最好先介绍云安全是什么，hypervisor的安全怎么和云安全相联系，或者和云计算有什么联系。这里也最好引用1-2篇该会议的paper<br>    2.介绍这个问题目前有哪些解决方案，简单介绍下他们如何解决的，这里不要介绍过多的技术细节。然后讲他们的优缺点。比如可以这样展开：为了解决这个问题，方案A引入了这种方式保护hypervisor，但面临新的安全问题，方案B引入..技术保护hypervisor 但性能差。<br>    3.提出本文的解决的方案。通常是先指出我们提出了一种什么样的方案，达到了什么目的.. 然后介绍用到了哪些主要的技术以及用它们的目的或者作用，或者比如使用硬件虚拟化提升了系统性能。注意introduction通常要包含你的方案的全部要点，不要过多展开，但是一定要提到。包括使用了什么方法或技术，解决了什么问题，克服了什么缺陷等等都要提到。<br>    4.明确指出contribution。contribution就是讲你实现了什么目的，解决了什么问题。相对于之前解决方案的优势，比如实现了123的同时overhead也不高. 优势是克服了之前方案的缺陷或challenge。记住contribution千万不要overclaim，实事求是,没有做到的，或不确定的就不要说。<br>    5.通常introduction的最后是讲接下来各section会讲什么。</p>
+<p>###<strong>Background</strong></p>
+<pre><code>background就是介绍下你使用技术的背景或者要解决的问题的背景。
+如果介绍你使用技术的背景，可以稍微讲细一些，个人建议介绍下技术的功能和优势,并简单介绍怎么使用，以及利用这种优势我们可以实现什么，这样就与后文相联系起来。比如原理，通过在EPT里设置一个bit 1，可以设置写保护。之后design和实现部分就只需要讲怎么用这些技术。比如，为了保护这个page,我们在EPT里设置bit 1，就不用解释为什么设置bit 0有这种效果，因为background已经解释过。
+
+如果介绍要解决问题的背景，比如安全问题，那么就介绍下threat model，有哪些可能的攻击。或者通过与其它方案对比总括你的问题和解决方案(这样background就相当于一个overview)。比如 &quot;用一个最最简单的例子（RunningExample），然后使用这个例子引出你要解决的问题。接着再把之前在Intro中提到的现有解决方案挨个说一遍，并且用那个案例表明三个解决方案的不足（这里最好用实际数据）。最后把你的解决方案介绍一下，重点是与前人做的相比较。如果你用了一种新的算法，你可以大概提一下这个算法的思路以及实验数据；如果是新架构，最好放一张架构图上去，然后阐述一下新架构的优势（以及劣势）。在这一章介绍自己的idea的时候，你只需要概略描述即可，凡是涉及到技术细节的东西均可以放在后面的章节讲从而节省页面空间&quot;。
+
+最后提出你系统的目的是什么，为了达到目的，要实现哪些目标，或者解决哪些问题。目标的制定可以按照你系统的工作流程来制定。比如你的系统有三个工作阶段，为了达到目的，三个阶段要分别实现什么目标。这样就很有逻辑。因为之后的design和实现就要围绕实现这些目标而展开，所以目标一般要具体到某个技术点，或与系统有关的点。比如我们要保护hypervisor的安全，就要实现以下目标:1.隔离 2.security tool不能被hypervisor攻击.
+</code></pre><p>###<strong>Design</strong><br>    这部分讲你的设计是什么，又是如何实现这些目标，最好分为一个个subsection，每个subsection对应1个或2个目标，讲如何实现它们。各个subsection之间也要有关联，比如subsection1-3按工作流程来组织，分别对应系统的1-3工作阶段.每个subsection的开头可以点一下当前的工作流程是什么.比如当阶段1开始时,一个handler会被调用。为了保证安全，handler需要做什么。这样就逐步引出你的设计.subsection的最后通常要写因为做到了.. 所以我们实现了目标..，这样才说明你确实实现了目标。</p>
+<pre><code>最后设计写完后，如果你系统的目的是实现安全，必须要写security analysis。security analysis是分析可能的针对你系统的攻击及如何防御。一些重要的corner case千万不要省略，特别是如果你的目的就是保证安全，任何可能利用到你系统漏洞的攻击都要提到。
+</code></pre><p>###<strong>Implement</strong><br>    由于我投的是workshop，不需要写implement。关于怎么写这一部分我就参考一下网上的。我觉得implement就是如何将之前设计的各个子模块串在一起，通常按照从系统启动到工作的过程来组织。比如你之前设计里讲到系统包含模块1和2，那implement就讲系统的初始化时要先初始化模块1，然后创建模块2。然后系统运行时如何来保证安全。其中的技术细节要讲清楚。”比如说新的系统是在Linux上实现的，新加了20000行C代码，1500行Python以及300行Bash script。C代码主要干什么，Python主要干什么以及Bash script干什么，要能和design里面讲的相对应”。</p>
+<p>###<strong>Evaluation</strong><br>    这部分引用下别人的话“这部分讲如何用实验验证你的解决方案，支持你的contributions。根据我们的例子，这里需要写的是如何从实验数据中展示你的解决方案保护hypervisor同时提高性能。保护hypervisor这种问题比较容易说，但是性能不错就需要和前人作品做大量比较了。柱状图，折线图，表格等等数据展示手段，只要能说明问题都可以采用。这里需要注意的是，只要你写在论文里面的文字或者是图表，你都要想清楚背后的原因，最好能在论文里做充分的解释。比方说，你采用了新的算法，性能见表1，原因是复杂度降低了；你采用了新架构，性能提升见图3，原因是新架构节省了内存拷贝。通常来说，新算法或者架构会总体上提升性能，但也可能会有异常情况，即新方案比不过老方案的地方。这时需要格外注意，因为这是你的weaknesses，你需要用令人信服的说法向读者展示这些异常情况存在的可能性较低，或者可以通过某种简单方式避免。”</p>
+<pre><code>另外，实验验证的数据集在可能的情况下，一定要2个或以上。不要觉得一个数据集已经很充分验证方法了，再跑第二个结果反正也肯定是类似的。这一点千万不要马虎了，即使第二个数据集很难找到，也要尽量，实在不行也要用simulation之类的做补充。有读者就因为自己的问题吃过类似的亏，现在回想非常不划算。一个工作第一次投一个A类的会，只用了一个数据集，然后reject的一大理由就是验证不够充分。之后转投一个trans补充了另一个数据集，review就都说实验很充分，反而是文章的优点了&quot;。
+
+我觉得这一段可以这样展开。1.阐述evaluation的目的，为了对比什么，突出什么等。 2.实验环境及配置: 什么机器，机器配置是什么。 3.实验方法：比如通过在一个hypervisor里面进行的测试。 4.结果及分析：数据通常用图表显示，解释为什么会这样。结论是什么，比如数据显示我们的方案有更好的性能。
+</code></pre><p>###<strong>Discussion</strong><br>    “如果写到这里你还有充足页面可用，你可以写一个discussion章节来讨论你的方案的缺点，以及未来有可能的改进情况。不要怕展示缺点，你越诚恳审稿人对你印象越好。如果你是故意遗漏新方法的一个很显然的缺点，这会给审稿人非常不好的印象。你也可以提一些你的方案的其他应用等等”。</p>
+<p>###<strong>Related work</strong><br>    这部分讲与你的work相关的或者类似的工作是怎么做的，优缺点是什么。相比他们，你系统的优势是什么，这个优势要与前面的contribution对应或者你overview里面的系统目的相对应。讲其他系统是如何工作的，可以稍微讲下他们用的技术和方法。至于它们的缺陷只是提一下就好，不要过于贬低别人。比如其他保护hypervisor的系统利用了硬件技术..，构造了两个工具，工具分别是用来做什么，最后他们实现了什么目的，但是他们的缺点是性能差。但我们的系统通过使用….可以保证较好的性能。</p>
+<pre><code>类似的工作比如说和我们使用了同样的架构,只是用到了不同的场景中。它们是怎么做的，我们的做法有什么不同，我们的优势或优点是什么.写这一部分时，要看下你当前的论文篇数是否超过会议的限制。如果超过了可以少写点，或者改完其他部分再来添加。
+</code></pre><p>###<strong>Conclusion</strong><br>    这部分可以写简单点。一般是：本文中，我们提出了..的方案，实现了什么目的。我们做到了什么(这里重新阐述你的contribution)，有什么优势等。最后可以提一下你的future work。</p>
+<p>###<strong>Abstract</strong><br>    我觉得abstract可以在写完全文再来写，或者写完introduction后可以写一部分abstract。abstract要简明扼要地概括paper的全面内容。1.首先直接介绍问题及其重要性。 2.介绍下现有解决方案的做法和缺陷。 3.引出你的方案，简单你采用什么方法，目的是什么。你的contribution(实现了什么)。你用什么技术，达到了什么效果(比如用硬件虚拟化提升了性能)，取得了什么优势。最后说，目前我们实现了这样一个系统..。如果尚未实现就说系统尚处于早期阶段。</p>
+<p>###<strong>Reference</strong><br>    一般文中出现的专业名词，使用的硬件技术，介绍的别人的系统等等都都引用一下相关参考文献。</p>
+<p>##<strong>工具及写作流程</strong></p>
+<p>###<strong>Latex工具</strong><br>    写论文通常是用latex,latex的安装在linux上很简单。我是在windows上安装的，需要先安装UnxUtils(为windows提供的linux 工具库,包括vim,git等)和latex.安装latex只是为了提供一些库，并不需要使用其提供的图形工具。我是用git-bash命令行工具进行命令行操作，利用makefile生成paper。使用vim和git进行paper编辑和管理。</p>
+<pre><code>关于图片，图片很重要！图片最好要配色，一张好的图片要能清晰地反映你由于latex一般对.eps的文件支持较好。在windows上面通常先利用visio画图,将其另存为pdf。再用adobe软件将pdf导出为内嵌式postscript(eps)格式，由于此时pdf很大，通常先将使用编辑-&gt;裁剪-&gt;双击要裁剪的区域-&gt;选择删除页边距,这样得到的pdf就只有图片，没有边距。当然也可以根据你的需要选择不删除白边距。
+</code></pre><p>###<strong>写作流程</strong><br>    写完paper的全部内容一般有3遍。第一遍，速度要快。从introduction开始写各个章节，参考我上面讨论的和需要注意的地方。目的只有一个：把你要表述的意思，有逻辑地表述出来，内容完整，句子之间有联系，段之间，章节之间有联系。 此时不用在意语言和文字如何优美或精炼，不知道如何表述用中文先写也可以，因为你写的句子再好之后都可能改动或删掉。重点是按照结构把全部内容写出来，包括画好图片。这一遍速度要快，尽量5-7天完成全部内容，如果要做测试，可以先用3-5天把evaluation之前的部分写完再测。通常至少留3-7天进行测试。</p>
+<pre><code>第二遍要细致和严谨。首先通读一遍论文，还是参考上面的看内容结构是否正确。每一句检查，看逻辑是否通顺。此时可以适当调整句子结构，太长的句子要缩短。同时写的时候要保证语法正确，单词符合你要表达的意思。同时调整图片让其清晰美观。这一遍完成后，通读一遍paper，再次检查段之间，句子之间是否关联合和照应。检查并修改完成后paper的内容和结构就已经确定并且不再更改。之后就只剩检查语法。
+
+第三遍进行语法检查 我是这样做的:
+先检查拼写错误:把paper全部copy到word中，word里有红                                        的地方就是拼写错误，先把它们全部在paper里更正了。但是不知道word能不能检查时态和语态
+
+然后检查语法:每个句子读两遍。
+第1遍 确认句子结构
+（1）开头是否大写.开头放的是本句子的重点,一般开头不要放什么how to 以及when, after等表示时间的句子，这是中国人的习惯。而外国人通常是习惯把这些放在句末。除非你想重点突出时间。开头不能放缩写和阿拉伯数字，比如开头不能是fg.1要写成figure 1. 开头不能是1 ，要改为英文单词one
+（2）句子的成分是否齐全:主谓宾，标点，一个句子中若有两个谓语或两个主语，是否中间有连词。如果是定语从句，那么which，that的指代的是前面的哪个词，是否可以这样指代。
+（3）通读一边句子后，明确意思是否是你想表达的意思
+
+第2遍 确认单词
+遇到每一个词，检查意思是否正确和精确。虽然你已经在用word检查了拼写错误，但是如果你写错的词恰好变为另一个词，word是检查不出来的。比如把delay 写为了deny 意思就全变了。除了意思正确，还要保证精确，就是严谨。比如是用may 表示可能，还是must表示一定。
+检查名词：前面是否需要加冠词，单复数
+检查动词：时态语态(单三)，动词搭配，比如动宾搭配，动词+介词搭配等
+检查副词：注意respectively要放在句末
+检查代词：指代是否清晰
+检查连词：注意such as
+检查标点 : 双引号,按住shift输入“”是中文的双引号。latex里面写英文的双引号是使用键盘的Tab键上侧的反引号键连续键入两个``然后输入键盘的两个单引号&apos;&apos;。
+
+检查单词时我先是用有道查，确保无误的单词就加入单词本，下次如果遇到同样的词如果显示已收藏，就表示这个词之前检查过并且正确，边不用再看。 有道查不到就用google学术查其他paper里有无这种表述，我一般有google学术查一些动词搭配和专业名词。最后如果某个句子检查过了，我把句子复制到笔记本中。之后检查时若遇到一些动词搭配，不记得是否这样用。可以在笔记本里搜索看是否已经检查过。
+</code></pre><p>###参考文献<br>如何写好论文：<a href="https://www.zhihu.com/question/22790506" target="_blank" rel="noopener">https://www.zhihu.com/question/22790506</a><br>老外对中国人写英语文章最常犯的错误总结：<br><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODM4NTI4MA==&amp;mid=2656644809&amp;idx=1&amp;sn=efa0cd10ba7dc67ef2c2d1a9e94ea272&amp;chksm=bd660d268a118430600d9c5ca4fadc040a146b744570b98801e9770397916cad3d4d281e6434&amp;mpshare=1&amp;scene=1&amp;srcid=1116QoMVtTeUkH4ndbcla9cC&amp;key=0fe6c5d8c1ba2581bd138d9c465c63fa8c2b7d9281727119aebdd5391922b42ec4495340d8b12b89f91a44e8b560443676aff88030bf81ff144ec45302cdab3f639ab269c5c94d401bf2d0ade2dc08c3&amp;ascene=0&amp;uin=Mzc4ODg2Mjk1&amp;devicetype=iMac+MacBookPro11%2C5+OSX+OSX+10.12.5+build(16F73)&amp;version=12020810&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=Ka2r3k1QOkS5p76psaVRlnQ%2FmG6otth2os6130f0CL9MEv8o0475Ig37cxpF3gQe" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MjM5ODM4NTI4MA==&amp;mid=2656644809&amp;idx=1&amp;sn=efa0cd10ba7dc67ef2c2d1a9e94ea272&amp;chksm=bd660d268a118430600d9c5ca4fadc040a146b744570b98801e9770397916cad3d4d281e6434&amp;mpshare=1&amp;scene=1&amp;srcid=1116QoMVtTeUkH4ndbcla9cC&amp;key=0fe6c5d8c1ba2581bd138d9c465c63fa8c2b7d9281727119aebdd5391922b42ec4495340d8b12b89f91a44e8b560443676aff88030bf81ff144ec45302cdab3f639ab269c5c94d401bf2d0ade2dc08c3&amp;ascene=0&amp;uin=Mzc4ODg2Mjk1&amp;devicetype=iMac+MacBookPro11%2C5+OSX+OSX+10.12.5+build(16F73)&amp;version=12020810&amp;nettype=WIFI&amp;fontScale=100&amp;pass_ticket=Ka2r3k1QOkS5p76psaVRlnQ%2FmG6otth2os6130f0CL9MEv8o0475Ig37cxpF3gQe</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/10/如何写好IT类论文/" data-id="cjb0was4j0001nkkzlfggfb1v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/写作/">写作</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-如何写好IT类paper" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -139,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/10/如何写好IT类paper/" data-id="cjb0vjv1i00004gkz7yvbhcto" class="article-share-link">Teilen</a>
+      <a data-url="http://yoursite.com/2017/12/10/如何写好IT类paper/" data-id="cjb0was480000nkkzh16efaef" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,13 +250,27 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/写作/">写作</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/写作/" style="font-size: 10px;">写作</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li></ul>
     </div>
@@ -175,9 +280,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/12/10/如何写好IT类论文/">如何写好IT类论文</a>
+          </li>
         
           <li>
             <a href="/2017/12/10/如何写好IT类paper/">(no title)</a>
